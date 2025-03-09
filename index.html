@@ -10,6 +10,7 @@
             text-align: center;
             padding: 50px;
         }
+        
         #timer {
             font-size: 48px;
             margin: 20px;
@@ -20,6 +21,7 @@
             border: none;
             cursor: pointer;
         }
+        
         .start { background-color: green; color: white; }
         .stop { background-color: red; color: white; }
         .reset { background-color: gray; color: white; }
@@ -28,6 +30,8 @@
     </style>
 </head>
 <body>
+
+    
     <h1>Pomodoro Timer</h1>
     <div id="timer">25:00</div>
     <button class="start" onclick="startTimer()">START</button>
@@ -37,6 +41,8 @@
     <button class="long-break" onclick="setLongBreak()">LONG BREAK</button>
     <audio id="alarm" src="https://www.soundjay.com/button/beep-07.wav"></audio>
 
+
+    
     <script>
         let timer;
         let timeLeft = 1500;
@@ -49,6 +55,7 @@
                 `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
         }
 
+        
         function startTimer() {
             if (!running) {
                 running = true;
@@ -69,6 +76,8 @@
             running = false;
         }
 
+
+        
         function resetTimer() {
             stopTimer();
             timeLeft = 1500;
@@ -81,6 +90,7 @@
             updateDisplay();
         }
 
+        
         function setLongBreak() {
             stopTimer();
             timeLeft = 900;
